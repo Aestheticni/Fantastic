@@ -1,94 +1,18 @@
-# Fantastic
-Simple GUI application which implements financial ratio calculations
+#
+# Functional requirements
 
-import tkinter as tk
-import tkinter.font as font
-
-
-def clear_screen():
-    for widget in window.winfo_children():
-        widget.destroy()
-    OPTIONS = [
-        "Profitability Ratios",
-        "Liquidity Ratios",
-        "Leverage Ratios",
-        "Operating Ratios"
-    ]
-    variable = tk.StringVar(window)
-    variable.set(OPTIONS[0])  # default value
-    frame_a = tk.Frame(window, borderwidth=5, background="#696969", relief=tk.RAISED)
-    frame_a.pack()
-    w = tk.OptionMenu(frame_a, variable, *OPTIONS)
-    w.pack()
-    frame_b = tk.Frame(window, borderwidth=5, background="#696969", relief=tk.RAISED)
-
-
-window = tk.Tk()
-window.config(bg="#615b5c")
-window.geometry("500x500+25+25")
-frame_2 = tk.Frame(window, borderwidth=5, background="#696969", relief=tk.RAISED)
-frame_3 = tk.Frame(window, borderwidth=5, background="#696969", relief=tk.RAISED)
-frame_1 = tk.Frame(window, borderwidth=5, background="#696969", relief=tk.RAISED)
-
-window.columnconfigure(1, weight=1, minsize=75)
-window.rowconfigure(0, weight=1, minsize=50)
-frame_1.grid(row=0, column=1, padx=3, pady=5)
-window.columnconfigure(1, weight=1, minsize=75)
-window.rowconfigure(1, weight=1, minsize=50)
-
-frame_2.grid(row=1, column=1, padx=3, pady=5)
-window.columnconfigure(1, weight=1, minsize=75)
-window.rowconfigure(2, weight=1, minsize=50)
-frame_3.grid(row=2, column=1, padx=3, pady=5)
-
-myFont = font.Font(family='Helvetica', size=20, weight='bold')
-
-button_1 = tk.Button(master=frame_1, text="TAB-1", width=20, height=5, background="#c4bcbe", font=myFont,
-                     command=clear_screen)
-button_2 = tk.Button(master=frame_2, text="TAB-2", width=20, height=5, background="#c4bcbe", font=myFont)
-button_3 = tk.Button(master=frame_3, text="TAB-3", width=20, height=5, background="#c4bcbe", font=myFont)
-
-button_1.pack()
-button_2.pack()
-button_3.pack()
-
-window.mainloop()
-
-from tkinter import *
-# Messagebox library
-from tkinter import messagebox
-
-# Python List
-services = []
-
-
-# Function to use when button is clicked displaying info from checkbox
-def showInfo():
-    for i in range(len(services)):
-        selected = ""
-        # Get services variable
-        if services[i].get() >= 1:
-            selected += str(i)
-            # External Window
-            messagebox.showinfo(message="You selected Checkbox " + selected)
-
-        # Create new root window
-
-
-window = Tk()
-# Root window title
-window.title("Detailed ratios")
-
-for i in range(10):
-    # Append int variables for each checkbox
-    option = IntVar()
-    option.set(0)
-    services.append(option)
-
-# Check widget used to display a number of toggle buttons/boxes for different options
-Checkbutton(window, text="Gross Margin",
-            # Pack manages our widgets in blocks before placing them onto our root window (Widget button or checkbox)
-            variable=services[0]).pack()
-
-Checkbutton(window, text="Operating Margin",
-            variable=services[1]).pack()
+|
+ | **User story** | **Requirement** | **Priority** |
+| --- | --- | --- | --- |
+| **Login** | As an existing user, I want to be able to log into my account on mobile. | The system must allow users to log into their account on mobile by entering their email and password. | MUST HAVE |
+| **Reset password** | As an existing user, I want to be able to reset my password on mobile. | The system must allow users to reset their password by clicking on &quot;I forgot my password&quot; and receiving a link to their verified account email. | MUST HAVE |
+| **Profile** | As an existing user, I want to be able to set up a personal profile. | The system must prompt users to set up a personal profile with the requested details (user&#39;s name, date of birth, year group, country of residence, school). | MUST HAVE |
+| **Search directory** | As a current user, I want to be able to search for study resources for my selected subjects in an efficient manner that saves retrieval time and allows me to view everything at once. | The application must have a directory which stores resources and links that can be retrieved easily by users. | MUST HAVE |
+| **Log work** | As a user, I would like my work to be saved each time I use the application so that it is not lost and previous revision is acknowledged. | The application must keep track of everything that a user does | MUST HAVE |
+| **Notifications** | As an existing user, I want to be able to receive push notifications. | The system must be able to deliver scheduled notifications to the user&#39;s phone.The banner must display a description of the resource such as &quot;Check out these questions on quadratics!&quot; | MUST HAVE |
+| **Motivational messages** | As an existing user, I want to be able to receive and input motivational messages. | The application must have a library section for motivational quotes to be accessed and read by users. | MUST HAVE |
+| **Subject selection** | As a current user, I&#39;d want to be able to select key subjects as well as alternative ones so that I have a variety of possibilities. | The application must include the core disciplines (Maths, English, and Sciences) as well as additional GCSE subjects that are accessible to all users. | MUST HAVE |
+| **Subject priority** | As an existing user, I would want to order my topics in a list of priorities so that I can identify the subjects I struggle with the most. | The software should allow users to prioritise subjects and an algorithm should send frequent reminders for topics that are difficult for the user. | SHOULD HAVE |
+| **Rating feature** | As an existing user, I want to be able to rate my study session so that I can tailor my learning to my own needs. | This feature should allow users to rate the efficacy of their revision session. | SHOULD HAVE |
+| **Exam board requirements** | As an existing user, I&#39;d want to input my exam board so that the content shown is exclusive to what I&#39;m studying. | The application could prompt students to input their exam board. | COULD HAVE |
+| **Randomisation tool** | As an existing user, I&#39;d want to be able to search for more content for my revision in order to maximise my learning. | The application could have a randomisation option available for users. | COULD HAVE |
